@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" >
+    <head>
+        <title i18n="title"></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="lib/jquery.js"></script>
+        <script type="text/javascript" src="lib/jquery.i18n.js"></script>
+        <script type="text/javascript" src="lang.js"></script>
+        <script>
+            $(function () {
+                $.i18n.init('en');
+                
+                $('#en').click(function() {
+                    $.i18n.set_locale('en');
+                });
+                
+                $('#bg').click(function() {
+                    $.i18n.set_locale('bg');
+                });
+                
+                $('#dynamic').click(function() {
+                    var div = $('<div/>');
+                    div.append('<span i18n="enter_content"></span>: ');
+                    div.append('<span><input type="text" i18n="enter_content" i18n-attr="placeholder" /></span>');
+                    
+                    $('body').append(div);
+                    
+                    $.i18n.reload(div); // reload with div as context
+                    // $.i18n.realod(); // reload with document as context
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <button id="en" i18n="button.en"></button>
+            <button id="bg" i18n="button.bg"></button>
+            <button id="dynamic" i18n="button.add_dynamic_content"></button>
+        </div>
+        <h1>
+            <span i18n="hello"></span>
+            <span i18n="world"></span>
+        </h1>
+    </body>
+</html>
