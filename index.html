@@ -5,7 +5,7 @@
         <title i18n="title"></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <script type="text/javascript" src="lib/jquery.js"></script>
-        <script type="text/javascript" src="lib/jquery.i18n.js"></script>
+        <script type="text/javascript" src="jquery.i18n.min.js"></script>
         <script type="text/javascript" src="lang.js"></script>
         <script>
             $(function () {
@@ -27,7 +27,7 @@
                     $('body').append(div);
                     
                     $.i18n.reload(div); // reload with div as context
-                    // $.i18n.realod(); // reload with document as context
+                    // $.i18n.reload(); // reload with document as context
                 });
             });
         </script>
